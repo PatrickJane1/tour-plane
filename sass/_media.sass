@@ -5,11 +5,15 @@
     width: 585px
   .hotel
     &-slider
+      width: 595px
       &__image
         width: 100%
         height: 100%
         object-fit: cover
-
+  .reviews
+    &-slider
+      &__item
+        max-width: 730px
 @media (max-width: 992px)
   .container, .newsletter-wrapper
     max-width: 700px
@@ -48,10 +52,10 @@
     width: 340px
   .map
     width: 340px
-.reviews
-  &-slider
-    &__item
-      max-width: 580px
+  .reviews
+    &-slider
+      &__item
+        max-width: 580px
 @media (max-width: 768px)
   .container
     max-width: 576px
@@ -161,3 +165,6 @@
       font-size: 18px
       line-height: 23px
       margin-bottom: 42px
+    &-slider
+      &__profile
+        z-index: 99
