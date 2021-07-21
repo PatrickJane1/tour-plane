@@ -101,14 +101,57 @@
         grid-column: span 5
         grid-row: 4
 @media (max-width: 768px)
+  body
+    padding-top: 78px
   .container
     max-width: 576px
     width: 92%
   .logo
     width: 132px
   .header
-    &-menu, &__search, &__user
+    &__mobile
+      &-fixed
+        position: fixed
+        left: 0
+        top: 0
+        right: 0
+        z-index: 99
+    &__search, &__user
+      &--mobile
+        &_hidden
+          display: none
+        &_visible
+          display: flex
+    &__user
+      flex-direction: column
+      justify-content: center
+    &-bottom
       display: none
+      position: fixed
+      right: 0
+      left: 0
+      bottom: 0
+      top: 78px
+      padding-top: 30px
+      &--visible
+        display: block
+    &-menu
+      flex-direction: column
+      align-items: center
+      &__item
+        margin-bottom: 20px
+        &--mobile
+          &_visible
+            display: block
+      &__link
+        &--mobile
+          font-weight: bold
+          font-size: 12px
+          line-height: 15px
+    .search
+      &__input
+        &--mobile
+          width: 100%
     &-top
       &__menu-button
         display: flex
@@ -127,6 +170,14 @@
           width: 16px
           height: 1px
           background-color: $text-color
+
+  .user
+    &__name
+      &--light
+        color: $light
+        margin-left: 0
+        margin-top: 10px
+        margin-bottom: 27px
   .stars
     flex-basis: auto
   .hotel
@@ -188,6 +239,8 @@
   .footer
     &__input
       flex-basis: 100%
+    &__link
+      padding-right: 5px
 @media (max-width: 576px)
 
   .logo

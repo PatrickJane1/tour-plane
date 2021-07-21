@@ -409,6 +409,10 @@ template {
   color: #FFFFFF;
 }
 
+.header-menu__item--mobile_visible {
+  display: none;
+}
+
 .header-menu__link {
   font-size: 14px;
   line-height: 18px;
@@ -1448,6 +1452,9 @@ template {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 78px;
+  }
   .container {
     max-width: 576px;
     width: 92%;
@@ -1455,8 +1462,64 @@ template {
   .logo {
     width: 132px;
   }
-  .header-menu, .header__search, .header__user {
+  .header__mobile-fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 99;
+  }
+  .header__search--mobile_hidden, .header__user--mobile_hidden {
     display: none;
+  }
+  .header__search--mobile_visible, .header__user--mobile_visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__user {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-bottom {
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 78px;
+    padding-top: 30px;
+  }
+  .header-bottom--visible {
+    display: block;
+  }
+  .header-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-menu__item {
+    margin-bottom: 20px;
+  }
+  .header-menu__item--mobile_visible {
+    display: block;
+  }
+  .header-menu__link--mobile {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .header .search__input--mobile {
+    width: 100%;
   }
   .header-top__menu-button {
     display: -webkit-box;
@@ -1487,6 +1550,12 @@ template {
     width: 16px;
     height: 1px;
     background-color: #333333;
+  }
+  .user__name--light {
+    color: #FFFFFF;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 27px;
   }
   .stars {
     -ms-flex-preferred-size: auto;
@@ -1577,6 +1646,9 @@ template {
   .footer__input {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+  }
+  .footer__link {
+    padding-right: 5px;
   }
 }
 
