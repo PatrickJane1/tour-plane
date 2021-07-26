@@ -55,5 +55,25 @@ $(document).ready(function () {
     modalOverlay.removeClass("modal__overlay--visible");
     modalDialog.removeClass("modal__dialog--visible");
   }
-
+  // Обработка форм
+  $(".form").each(function (){
+    $(this).validate({
+      errorClass: "invalid",
+      messages: {
+      name: {
+        required: "Укажите имя",
+        minlength: "Имя должно быть не короче двух букв",
+      },
+      email: {
+        required: "Укажите ваш e-mail адресс",
+        email: "Your email address must be in the format of name@domain.com",
+      },
+      phone: {
+        required: "Телефон обязателен",
+      }
+      },
+    });
+  });
+  // jQuery Mask Input
+  $(".phone").mask("+7(999) 999-9999");
 });
